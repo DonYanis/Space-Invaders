@@ -1,0 +1,162 @@
+@font-face {
+    font-family: "poppins-regular";
+    src: url(../fonts/Poppins-Regular.ttf);
+}
+
+:root{
+    --bgColor:#222831;
+    --menuColor:#393e46;
+    --textColor:#eeeeee;
+}
+
+*{
+    box-sizing: border-box;
+    font-family: "poppins-regular";
+}
+
+body{
+    position: relative;
+    height: 100vh;
+    overflow-y: hidden;
+    margin: 0;  
+    background-color: var(--bgColor);
+}
+
+.menu{
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.table{
+    background-color: var(--menuColor);
+    width: 50%;
+    height: 500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 999;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 5px;
+    color: white;
+}
+
+.final-score{
+    border-bottom: 1px solid #eeeeee;
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+    padding-bottom: 20px;
+
+}
+
+.instructions{
+    width: 100%;
+    padding: 20px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid #ccc;
+}
+
+.difficulty{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.difficulty div{
+    padding: 0 30px;
+    margin-left: 20px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.difficulty div:hover{
+    background-color: #eeeeee;
+    color: var(--menuColor);
+}
+
+
+
+
+.game-grid{
+    margin-top: 20px;
+    width: 600px;
+    height: 600px;
+    outline: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-image: url(../images/univers2.png);
+    background-size: cover;
+    border-radius: 10px;
+}
+
+.score{
+    position: absolute;
+    left: 14%;
+    top: 20%;
+    transform: translate(-50%,-50%);
+    font-size: 20px;
+    color: var(--textColor);
+}
+
+
+.game-grid div{
+    margin: 0;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+
+}
+
+.alien{
+    background-image: url(../images/ship3.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+
+}
+
+.player{
+    background-image: url(../images/ship4.png);
+    background-size: contain;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+}
+
+.shot{
+    background-image: url(../images/shot1.png);
+    background-size: contain;
+
+}
+
+.death{
+    background-image: url(../images/boom2.png);
+    background-size: contain;
+
+}
+
+@media screen and (max-width:962px) {
+    .game-grid{
+        left: 60%;
+    }
+}
+
+@media screen and (max-width:760px) {
+    .game-grid{
+        width: 300px;
+        height: 300px;
+    }
+
+    .game-grid div{
+        width: 15px;
+        height: 15px;
+    }
+}
